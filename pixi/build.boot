@@ -9,7 +9,7 @@
          '[boot.util :refer [sh *sh-dir*]])
 
 (def +lib-version+ "4.0.0")
-(def +commit+ "5c778008b8f4941bf410a8ece1d426267ef59e0d")
+(def +commit+ "8fdb17a92f8f1fe015e59d153274c1be0b7ee6f8")
 (def +version+ (str +lib-version+ "-" (subs +commit+ 0 7) "-0"))
 (def +lib-folder+ (str "pixi.js-" +commit+))
 
@@ -24,7 +24,7 @@
 (deftask download-zip []
   (download
    :url (format "https://github.com/GoodBoyDigital/pixi.js/archive/%s.zip" +commit+)
-   :checksum "bf0e4d9aca81e9a36d4316c68dfa242d"
+   :checksum "cab4ce7243e88d662291bed3f72c4218"
    :unzip true))
 
 (deftask build []
