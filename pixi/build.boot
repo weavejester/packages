@@ -4,11 +4,11 @@
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "3.0.10")
+(def +lib-version+ "4.0.1")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
- pom  {:project     'cljsjs/pixi
+ pom  {:project     'weavejester/pixi
        :version     +version+
        :description "2D webGL renderer with canvas fallback"
        :url         "http://www.pixijs.com"
@@ -18,7 +18,7 @@
 (deftask package []
   (comp
     (download :url (format "https://github.com/GoodBoyDigital/pixi.js/archive/v%s.zip" +lib-version+)
-              :checksum "df4c6cb1b0830f9106db9c94a0ea8f5d"
+              :checksum "054a69c72d6ce4acbc2ee9723c96594c"
               :unzip true)
     (sift :move {#"^pixi\.js-([\d\.]*)/bin/pixi\.js$" "cljsjs/pixi/development/pixi.inc.js"
                  #"^pixi\.js-([\d\.]*)/bin/pixi\.min\.js$" "cljsjs/pixi/production/pixi.min.inc.js"})
